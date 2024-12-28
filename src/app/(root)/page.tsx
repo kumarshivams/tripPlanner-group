@@ -1,112 +1,78 @@
-'use client'
+import React from 'react';
 
-import React from "react";
-import { FaPlane, FaHotel, FaUmbrellaBeach, FaTrain } from "react-icons/fa";
+const guides = [
+    { name: "Giuseppe", expertise: "Nature", image: "/giuseppe.jpg" },
+    { name: "Giulia", expertise: "Oceans", image: "/giulia.jpg" },
+    { name: "Giorgio", expertise: "Culture", image: "/giorgio.jpg" },
+    { name: "SUNNY", expertise: "Planner", image: "/sunny.jpg" },
+    { name: "Jeremy", expertise: "Sustainability", image: "/jeremy.jpg" },
+];
 
-export default function Home() {
+export default function HomePage() {
     return (
-        <div className="bg-gray-100 min-h-screen">
-            {/* Header */}
-            <header className="bg-blue-600 text-white py-4">
-                <div className="container mx-auto flex justify-between items-center">
-                    <h1 className="text-2xl font-bold">TravelMate</h1>
-                    <nav className="space-x-6 flex items-center">
-                        <a href="#" className="flex items-center space-x-2 hover:underline">
-                            <FaPlane />
-                            <span>Flights</span>
-                        </a>
-                        <a href="#" className="flex items-center space-x-2 hover:underline">
-                            <FaHotel />
-                            <span>Hotels</span>
-                        </a>
-                        <a href="#" className="flex items-center space-x-2 hover:underline">
-                            <FaUmbrellaBeach />
-                            <span>Holiday Packages</span>
-                        </a>
-                        <a href="#" className="flex items-center space-x-2 hover:underline">
-                            <FaTrain />
-                            <span>Trains</span>
-                        </a>
-                    </nav>
-                </div>
-            </header>
-
-            {/* Search Section */}
-            <section className="bg-white py-10 shadow-md">
-                <div className="container mx-auto">
-                    <h2 className="text-2xl font-bold text-center mb-6">Plan Your Trip</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <input
-                            type="text"
-                            placeholder="From"
-                            className="w-full p-4 border border-gray-300 rounded-md"
-                        />
-                        <input
-                            type="text"
-                            placeholder="To"
-                            className="w-full p-4 border border-gray-300 rounded-md"
-                        />
-                        <input
-                            type="date"
-                            className="w-full p-4 border border-gray-300 rounded-md"
-                        />
-                    </div>
-                    <div className="mt-6 text-center">
-                        <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700">
-                            Search
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            {/* Deals and Offers Section */}
-            <section className="py-10">
-                <div className="container mx-auto">
-                    <h2 className="text-2xl font-bold text-center mb-6">Deals & Offers</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="bg-white shadow-md rounded-md overflow-hidden">
+        <main>
+            {/* Hero Section */}
+            <section className="bg-cover bg-center h-96" style={{ backgroundImage: "url('/background.jpg')" }}>
+                <div className="h-full flex flex-col justify-center items-center bg-black bg-opacity-40 text-white">
+                    <h1 className="text-4xl font-bold mb-4">Hi, I'm Travel Buddy, your personal travel agent</h1>
+                    <div className="flex flex-col items-center w-full max-w-lg space-y-4">
+                        {/* Chat/Search Input */}
+                        <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-md w-full">
                             <img
-                                src="/images/offer1.jpg"
-                                alt="Offer 1"
-                                className="w-full h-48 object-cover"
+                                src="/profile-pic.png"
+                                alt="Layla"
+                                className="w-8 h-8 rounded-full"
                             />
-                            <div className="p-4">
-                                <h3 className="text-lg font-bold">Flight Offer</h3>
-                                <p>Save up to 30% on domestic flights!</p>
-                            </div>
+                            <input
+                                type="text"
+                                placeholder="Ask Anything"
+                                className="flex-grow px-4 py-2 outline-none border-none text-gray-700"
+                            />
+                            <button className="bg-teal-600 text-white px-4 py-2 rounded-full hover:bg-teal-700">
+                                Ask
+                            </button>
                         </div>
-                        <div className="bg-white shadow-md rounded-md overflow-hidden">
-                            <img
-                                src="/images/offer2.jpg"
-                                alt="Offer 2"
-                                className="w-full h-48 object-cover"
-                            />
-                            <div className="p-4">
-                                <h3 className="text-lg font-bold">Hotel Deal</h3>
-                                <p>Book hotels and get up to 40% off.</p>
-                            </div>
-                        </div>
-                        <div className="bg-white shadow-md rounded-md overflow-hidden">
-                            <img
-                                src="/images/offer3.jpg"
-                                alt="Offer 3"
-                                className="w-full h-48 object-cover"
-                            />
-                            <div className="p-4">
-                                <h3 className="text-lg font-bold">Holiday Package</h3>
-                                <p>Special discounts on international trips.</p>
-                            </div>
+                        {/* Quick Action Buttons */}
+                        <div className="flex space-x-2 flex-wrap">
+                            <button className="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300">
+                                Inspire me where to go
+                            </button>
+                            <button className="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300">
+                                Create a new Trip
+                            </button>
+                            <button className="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300">
+                                Find family hotels in Dubai
+                            </button>
+                            <button className="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300">
+                                Build 7 day island hopping
+                            </button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="bg-blue-600 text-white py-4">
-                <div className="container mx-auto text-center">
-                    <p>&copy; 2024 TravelMate. All rights reserved.</p>
+            {/* Guides Section */}
+            <section className="py-12">
+                <div className="container mx-auto">
+                    <h2 className="text-2xl font-bold text-center mb-8">Discover Unforgettable Trips</h2>
+                    <div className="flex justify-center space-x-4 overflow-x-auto">
+                        {guides.map((guide, index) => (
+                            <div
+                                key={index}
+                                className="flex-shrink-0 w-40 bg-gray-100 p-4 rounded-lg shadow-md text-center"
+                            >
+                                <img
+                                    src={guide.image}
+                                    alt={guide.name}
+                                    className="w-16 h-16 mx-auto rounded-full mb-4"
+                                />
+                                <h3 className="font-semibold">{guide.name}</h3>
+                                <p className="text-sm text-gray-600">{guide.expertise}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </footer>
-        </div>
+            </section>
+        </main>
     );
 }
