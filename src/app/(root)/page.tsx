@@ -12,39 +12,51 @@ export default function HomePage() {
     return (
         <main>
             {/* Hero Section */}
-            <section className="bg-cover bg-center h-96" style={{ backgroundImage: "url('/background.jpg')" }}>
-                <div className="h-full flex flex-col justify-center items-center bg-black bg-opacity-40 text-white">
-                    <h1 className="text-4xl font-bold mb-4">Hi, I'm Travel Buddy, your personal travel agent</h1>
-                    <div className="flex flex-col items-center w-full max-w-lg space-y-4">
+            <section className="bg-cover bg-center h-96 relative" style={{ backgroundImage: "url('/images/bg-home.webp')" }}>
+                <div className="h-full flex flex-col justify-center bg-black bg-opacity-40 text-white p-6">
+                    <div className="flex items-center mb-6">
+                        <img
+                            src="/images/logo.png"
+                            alt="Travel Buddy"
+                            className="w-12 h-12"
+                        />
+                        <h1 className="text-4xl font-bold" style={{ fontFamily: "'Baloo Bhaijaan 2', cursive" }}>
+                            Travel Buddy
+                        </h1>
+                    </div>
+                    <div className="text-center mb-8">
+                        <h1 className="text-5xl font-bold mb-4">Hi, I'm Travel Buddy, your personal travel agent</h1>
+                    </div>
+                    <div className="flex flex-col items-center w-full max-w-3xl mx-auto space-y-6">
                         {/* Chat/Search Input */}
-                        <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-md w-full">
+                        <div className="flex items-center bg-white rounded-full px-6 py-3 shadow-lg w-full max-w-xl mx-auto transition-all duration-300 hover:shadow-2xl">
                             <img
-                                src="/profile-pic.png"
-                                alt="Layla"
-                                className="w-8 h-8 rounded-full"
+                                src="/images/Logo.png"
+                                alt="Profile"
+                                className="w-10 h-10 rounded-full mr-4"
                             />
                             <input
                                 type="text"
                                 placeholder="Ask Anything"
-                                className="flex-grow px-4 py-2 outline-none border-none text-gray-700"
+                                className="flex-grow px-4 py-2 outline-none border-none text-gray-700 placeholder-gray-400 text-lg"
                             />
-                            <button className="bg-teal-600 text-white px-4 py-2 rounded-full hover:bg-teal-700">
+                            <button className="bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition-colors">
                                 Ask
                             </button>
                         </div>
                         {/* Quick Action Buttons */}
-                        <div className="flex space-x-2 flex-wrap">
-                            <button className="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300">
+                        <div className="flex flex-wrap justify-center space-x-4 space-y-4">
+                            <button className="w-64 h-16 bg-gray-200 rounded-full text-sm font-medium text-gray-800 hover:bg-gray-300 transition-all">
                                 Inspire me where to go
                             </button>
-                            <button className="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300">
+                            <button className="w-64 h-16 bg-gray-200 rounded-full text-sm font-medium text-gray-800 hover:bg-gray-300 transition-all">
                                 Create a new Trip
                             </button>
-                            <button className="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300">
+                            <button className="w-64 h-16 bg-gray-200 rounded-full text-sm font-medium text-gray-800 hover:bg-gray-300 transition-all">
                                 Find family hotels in Dubai
                             </button>
-                            <button className="px-4 py-2 bg-gray-200 rounded-full hover:bg-gray-300">
-                                Build 7 day island hopping
+                            <button className="w-64 h-16 bg-gray-200 rounded-full text-sm font-medium text-gray-800 hover:bg-gray-300 transition-all">
+                                Build 7-day island hopping
                             </button>
                         </div>
                     </div>
