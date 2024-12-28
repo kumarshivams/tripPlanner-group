@@ -13,12 +13,12 @@ export default function Home() {
         setIsClient(true);
 
         // Fetch itineraries after the component mounts
-        const fetchItineraries = async () => {
-            const response = await axios.get('/api/itinerary');
-            setItineraries(response.data);
-        };
+        // const fetchItineraries = async () => {
+        //     const response = await axios.get('/api/itinerary');
+        //     setItineraries(response.data);
+        // };
 
-        fetchItineraries();
+        // fetchItineraries();
     }, []); // Empty dependency array to only run on mount
 
     // Render loading until the client is mounted
